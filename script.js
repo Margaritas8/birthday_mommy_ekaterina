@@ -4,8 +4,7 @@
 
 const SUPABASE_URL = "https://ftjmteemqzzzblxcxamp.supabase.co";
 
-const SUPABASE_KEY =
-"sb_publishable_o-OKGT3xpOO6VjJg2bLAZQ_PAZzqpho";
+const SUPABASE_KEY = "sb_publishable_o-OKGT3xpOO6VjJg2bLAZQ_PAZzqpho";
 
 const supabaseClient =
 supabase.createClient(
@@ -168,37 +167,37 @@ hiddenBlocks.forEach(section => {
    КНОПКА ВВЕРХ
 ========================================== */
 
-const topButton =
-document.createElement("button");
+             const topButton =
+             document.createElement("button");
 
-topButton.innerHTML = "↑";
+             topButton.innerHTML = "↑";
 
-topButton.className = "top-button";
+             topButton.className = "top-button";
 
-document.body.appendChild(topButton);
+             document.body.appendChild(topButton);
 
-window.addEventListener("scroll", () => {
+              window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 600) {
+             if (window.scrollY > 600) {
 
-        topButton.classList.add("visible");
+              topButton.classList.add("visible");
 
-    } else {
+             } else {
 
-        topButton.classList.remove("visible");
+              topButton.classList.remove("visible");
 
-    }
+              }
 
-});
+               });
 
-topButton.addEventListener("click", () => {
+              topButton.addEventListener("click", () => {
 
-    window.scrollTo({
+             window.scrollTo({
 
-        top:0,
+                top:0,
+ 
+                behavior:"smooth"
 
-        behavior:"smooth"
-
-    });
+             });
 
 });
