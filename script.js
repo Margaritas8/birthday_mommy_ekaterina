@@ -1,52 +1,57 @@
-// ===========================
-// SUPABASE
-// ===========================
+/* ==========================================
+   НАСТРОЙКИ SUPABASE
+========================================== */
 
 const SUPABASE_URL = "https://ftjmteemqzzzblxcxamp.supabase.co";
 
-const SUPABASE_KEY = "sb_publishable_o-OKGT3xpOO6VjJg2bLAZQ_PAZzqpho";
+const SUPABASE_KEY =
+"sb_publishable_o-OKGT3xpOO6VjJg2bLAZQ_PAZzqpho";
 
-const supabase = window.supabase.createClient(
+const supabaseClient =
+supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
 
-// ===============================
-// ОТКРЫТИЕ ПРИГЛАШЕНИЯ
-// ===============================
+/* ==========================================
+   КОНВЕРТ
+========================================== */
 
-const envelope = document.getElementById("openEnvelope");
-const invitation = document.getElementById("invitation");
+const envelope =
+document.getElementById("envelope");
 
-if (envelope && invitation) {
+const invitation =
+document.getElementById("invitation");
 
-    envelope.addEventListener("click", () => {
+envelope.addEventListener("click", () => {
+
+    envelope.classList.add("open");
+
+    setTimeout(() => {
 
         invitation.classList.remove("hidden");
-
-        setTimeout(() => {
-            invitation.classList.add("visible");
-        }, 100);
+        invitation.classList.add("show");
 
         invitation.scrollIntoView({
             behavior: "smooth"
         });
 
-    });
+    }, 900);
 
-}
+});
 
-// ===============================
-// ТАЙМЕР
-// ===============================
+/* ==========================================
+   ТАЙМЕР
+========================================== */
 
-const eventDate = new Date("2026-08-22T16:00:00").getTime();
+const targetDate =
+new Date("2026-08-22T16:00:00").getTime();
 
 function updateTimer() {
 
     const now = new Date().getTime();
 
-    const distance = eventDate - now;
+    const distance = targetDate - now;
 
     if (distance <= 0) {
 
@@ -59,46 +64,89 @@ function updateTimer() {
 
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const days =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
+    const hours =
+    Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
     );
 
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
+    const minutes =
+    Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
     );
 
-    const seconds = Math.floor(
-        (distance % (1000 * 60)) /
-        1000
+    const seconds =
+    Math.floor(
+        (distance % (1000 * 60))
+        / 1000
     );
 
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+    document.getElementById("days").textContent =
+    String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+    String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+    String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+    String(seconds).padStart(2, "0");
 
 }
 
 updateTimer();
+
 setInterval(updateTimer, 1000);
+/* ==========================================
+   МОДАЛЬНОЕ ОКНО
+========================================== */
 
-// ===============================
-// ПЛАВНОЕ ПОЯВЛЕНИЕ БЛОКОВ
-// ===============================
+const successModal =
+document.getElementById("successModal");
 
-const sections = document.querySelectorAll(".fade-section");
+const closeModal =
+document.getElementById("closeModal");
 
-const observer = new IntersectionObserver((entries) => {
+if (closeModal) {
+
+    closeModal.addEventListener("click", () => {
+
+        successModal.classList.remove("active");
+
+    });
+
+}
+
+window.addEventListener("click", (event) => {
+
+    if (event.target === successModal) {
+
+        successModal.classList.remove("active");
+
+    }
+
+});
+
+/* ==========================================
+   ПЛАВНОЕ ПОЯВЛЕНИЕ БЛОКОВ
+========================================== */
+
+const hiddenBlocks =
+document.querySelectorAll("section");
+
+const observer =
+new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
 
         if (entry.isIntersecting) {
 
-            entry.target.classList.add("visible");
+            entry.target.classList.add("show");
 
         }
 
@@ -106,92 +154,50 @@ const observer = new IntersectionObserver((entries) => {
 
 }, {
 
-    threshold: 0.15
+    threshold:0.15
 
 });
 
-sections.forEach(section => {
+hiddenBlocks.forEach(section => {
 
     observer.observe(section);
 
 });
 
-// ===============================
-// ФОРМА RSVP
-// ===============================
+/* ==========================================
+   КНОПКА ВВЕРХ
+========================================== */
 
-form.addEventListener("submit", async function(e){
+const topButton =
+document.createElement("button");
 
-    e.preventDefault();
+topButton.innerHTML = "↑";
 
-    const name = document.getElementById("guestName").value;
+topButton.className = "top-button";
 
-    const answer =
-        document.querySelector('input[name="answer"]:checked')?.value;
+document.body.appendChild(topButton);
 
-    const comment =
-        document.getElementById("comment").value;
+window.addEventListener("scroll", () => {
 
-    const button = form.querySelector("button");
+    if (window.scrollY > 600) {
 
-    button.disabled = true;
-    button.textContent = "Отправляем...";
+        topButton.classList.add("visible");
 
-    const { error } = await supabase
-        .from("guests")
-        .insert([
-            {
-                name,
-                answer,
-                comment
-            }
-        ]);
+    } else {
 
-    if(error){
-
-        alert("Ошибка 😢\n\n" + error.message);
-
-        console.log(error);
-
-    }else{
-
-        alert(
-`Спасибо, ${name}! ❤️
-
-Ваш ответ сохранён.`
-        );
-
-        form.reset();
+        topButton.classList.remove("visible");
 
     }
 
-    button.disabled = false;
-    button.textContent = "Отправить";
-
 });
-}
 
-// ===============================
-// ПЛАВНАЯ ПРОКРУТКА
-// ===============================
+topButton.addEventListener("click", () => {
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+    window.scrollTo({
 
-    link.addEventListener("click", function(e){
+        top:0,
 
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if(target){
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
+        behavior:"smooth"
 
     });
 

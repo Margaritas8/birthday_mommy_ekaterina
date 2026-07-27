@@ -1,684 +1,639 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-
 <head>
-
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Юбилей Екатерины</title>
 
-    <title>Юбилей Екатерины • 45 лет</title>
+    <meta name="description"
+          content="Приглашение на юбилей">
 
+    <!-- Google Fonts -->
 
-    <meta name="theme-color" content="#F8F4EB">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+          rel="stylesheet">
 
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
 
-
 <body>
 
+<!-- ========================================= -->
+<!-- HERO -->
+<!-- ========================================= -->
 
 <header class="hero">
 
+    <!-- Размытый фон -->
+
+    <div class="hero-bg"></div>
+
+    <!-- Кремовый фильтр -->
 
     <div class="hero-overlay"></div>
 
-
     <div class="hero-content">
 
+        <p class="hero-top">
 
-        <p class="welcome">
-            Есть дни, которые хочется сохранить
-            в памяти навсегда...
+            YOU ARE INVITED
+
         </p>
 
+        <h1>
 
-        <div class="envelope" id="openEnvelope">
+            Дорогие гости
 
+        </h1>
 
-            <div class="envelope-front">
+        <div class="hero-text">
 
-
-                <span class="heart">♡</span>
-
-
-                <h3>Для дорогих гостей</h3>
-
-
-                <p>
-                    Нажмите, чтобы открыть приглашение
-                </p>
-
-
-            </div>
-
+            С огромной радостью
+            приглашаю вас разделить
+            со мной особенный день —
+            мой юбилей.
 
         </div>
 
+        <div class="hero-date">
+
+            22 августа 2026
+
+        </div>
+
+        <!-- Конверт -->
+
+        <div class="envelope-wrapper">
+
+            <div class="envelope"
+                 id="envelope">
+
+                <!-- письмо -->
+
+                <div class="letter">
+
+                    <div class="letter-paper">
+
+                        <p>
+
+                            Открыть
+                            приглашение
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- задняя часть -->
+
+                <div class="envelope-back"></div>
+
+                <!-- верхний клапан -->
+
+                <div class="envelope-flap"></div>
+
+                <!-- передняя часть -->
+
+                <div class="envelope-front"></div>
+
+                <!-- восковая печать -->
+
+                <div class="seal">
+
+                    45
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="hero-tip">
+
+            Нажмите на печать
+
+        </p>
 
     </div>
-
 
 </header>
 
+<!-- ========================================= -->
+<!-- ПРИГЛАШЕНИЕ -->
+<!-- ========================================= -->
 
-<section class="invitation hidden fade-section" id="invitation">
+<main>
 
-
-    <div class="container">
-
-
-        <p class="script">
-            С любовью приглашаем Вас
-        </p>
-
-
-        <h1>
-            Юбилей
-            <span>Екатерины</span>
-        </h1>
-
-
-        <div class="age">
-            45
-        </div>
-
-
-        <p class="years">
-            лет
-        </p>
-
-
-        <p class="date">
-            22 августа 2026 года
-        </p>
-
-
-        <p class="time">
-            Начало праздника в 16:00
-        </p>
-
-
-    </div>
-
-
-</section>
-
-
-<section class="countdown fade-section">
-
+<section
+    class="invitation hidden"
+    id="invitation">
 
     <div class="container">
 
+        <span class="section-subtitle">
 
-        <h2 class="section-title">
-            До нашей встречи осталось
-        </h2>
+            INVITATION
 
-
-        <div class="timer">
-
-
-            <div class="timer-box">
-
-
-                <span id="days">00</span>
-
-
-                <small>Дней</small>
-
-
-            </div>
-
-
-            <div class="timer-box">
-
-
-                <span id="hours">00</span>
-
-
-                <small>Часов</small>
-
-
-            </div>
-
-
-            <div class="timer-box">
-
-
-                <span id="minutes">00</span>
-
-
-                <small>Минут</small>
-
-
-            </div>
-
-
-            <div class="timer-box">
-
-
-                <span id="seconds">00</span>
-
-
-                <small>Секунд</small>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-<section class="story fade-section">
-
-
-    <div class="container story-grid">
-
-
-        <div class="story-image">
-
-
-            <img src="images/mama.jpg" alt="Екатерина в детстве">
-
-
-        </div>
-
-
-        <div class="story-text">
-
-
-            <h2>
-                Когда-то...
-            </h2>
-
-
-            <p>
-                Когда-то маленькая девочка с корзинкой ягод
-                радовалась каждому летнему дню,
-                мечтала, смеялась и верила,
-                что впереди её ждёт много счастливых моментов.
-            </p>
-
-
-            <p>
-                Сегодня мы приглашаем вас разделить
-                один из тех самых моментов —
-                юбилей Екатерины.
-            </p>
-
-
-            <p>
-                Пусть этот праздник подарит
-                искренние улыбки,
-                тёплые объятия,
-                счастливые воспоминания
-                и станет ещё одной красивой страницей
-                нашей семейной истории.
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-<section class="location fade-section">
-
-
-    <div class="container">
-
-
-        <h2 class="section-title">
-            Мы будем рады видеть вас
-        </h2>
-
-
-        <div class="info-grid">
-
-
-            <div class="info-card">
-
-
-                <div class="icon">📍</div>
-
-
-                <h3>Место</h3>
-
-
-                <p>
-                    Ресторан <strong>«Отдых»</strong><br>
-                    Московская область,<br>
-                    г. Подольск<br>
-                    ул. Генерал-губернатора Закревского, д.1
-                </p>
-
-
-            </div>
-
-
-            <div class="info-card">
-
-
-                <div class="icon">🕓</div>
-
-
-                <h3>Начало</h3>
-
-
-                <p>
-                    22 августа 2026 года<br><br>
-                    Сбор гостей — <strong>16:00</strong><br>
-                    Начало фуршета
-                </p>
-
-
-            </div>
-
-
-            <div class="info-card">
-
-
-                <div class="icon">🥂</div>
-
-
-                <h3>Вас ждёт</h3>
-
-
-                <p>
-                    ✨ Праздничный вечер<br>
-                    🍽 Вкусный ужин<br>
-                    🎶 Музыка<br>
-                    💃 Танцы<br>
-                    📸 Красивые фотографии
-                </p>
-
-
-            </div>
-
-
-        </div>
-
-
-        <div class="map-button">
-
-
-            <a href="https://yandex.ru/maps/?text=Подольск+улица+Генерал-губернатора+Закревского+1"
-               target="_blank">
-
-
-                📍 Построить маршрут
-
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-<section class="dresscode fade-section">
-
-
-    <div class="container">
-
-
-        <h2 class="section-title">
-            Дресс-код
-        </h2>
-
-
-        <p class="dress-text">
-
-
-            Нам будет очень приятно,
-            если вы поддержите атмосферу праздника
-            и выберете наряд
-            в одной из предложенных цветовых гамм.
-
-
-        </p>
-
-
-        <div class="colors">
-
-
-            <div class="color">
-
-
-                <div class="circle beige"></div>
-
-
-                <span>Бежевый</span>
-
-
-            </div>
-
-
-            <div class="color">
-
-
-                <div class="circle pearl"></div>
-
-
-                <span>Жемчужный</span>
-
-
-            </div>
-
-
-            <div class="color">
-
-
-                <div class="circle pink"></div>
-
-
-                <span>Пыльно розовый</span>
-
-
-            </div>
-
-
-            <div class="color">
-
-
-                <div class="circle gold"></div>
-
-
-                <span>Золотистый</span>
-
-
-            </div>
-
-
-            <div class="color">
-
-
-                <div class="circle olive"></div>
-
-
-                <span>Оливковый</span>
-
-
-            </div>
-
-
-            <div class="color">
-
-
-                <div class="circle brown"></div>
-
-
-                <span>Коричневый</span>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-<section class="gift fade-section">
-
-
-    <div class="container">
-
-
-        <div class="gift-card">
-
-
-            <h2>
-                Пожелание по подарку
-            </h2>
-
-
-            <div class="gift-icon">
-                💌
-            </div>
-
-
-            <p>
-
-
-                Самый главный подарок —
-                это ваше присутствие,
-                улыбки и хорошее настроение.
-
-
-            </p>
-
-
-            <p>
-
-
-                Если вы захотите поздравить
-                Екатерину дополнительно,
-                мы будем рады
-                <strong>конвертику 🤍</strong>
-
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-<section class="rsvp fade-section">
-
-
-    <div class="container">
-
-
-        <h2 class="section-title">
-            Подтвердите своё присутствие
-        </h2>
-
-
-        <p class="rsvp-text">
-
-
-            Нам будет очень приятно узнать,
-            сможете ли вы разделить с нами этот особенный день.
-
-
-            <br><br>
-
-
-            Пожалуйста, сообщите нам о своём решении
-            до <strong> 15 августа 2026 года.</strong>
-
-
-        </p>
-
-
-        <form id="rsvpForm">
-
-
-            <input
-                type="text"
-                id="guestName"
-                placeholder="Ваше имя"
-                required
-            >
-
-
-            <div class="radio-group">
-
-
-                <label>
-
-
-                    <input
-                        type="radio"
-                        name="answer"
-                        value="Приду"
-                        checked
-                    >
-
-
-                    ❤️ С удовольствием приду
-
-
-                </label>
-
-
-                <label>
-
-
-                    <input
-                        type="radio"
-                        name="answer"
-                        value="Не смогу"
-                    >
-
-
-                    🌿 К сожалению, не смогу
-
-
-                </label>
-
-
-            </div>
-
-
-            <textarea
-                id="comment"
-                placeholder="Напишите комментарий (по желанию)"
-                rows="5"
-            ></textarea>
-
-
-            <button type="submit">
-
-
-                Отправить ответ
-
-
-            </button>
-
-
-        </form>
-
-
-    </div>
-
-
-</section>
-
-
-<section class="thanks fade-section">
-
-
-    <div class="container">
-
+        </span>
 
         <h2>
 
-
-            Мы будем счастливы видеть вас ❤️
-
+            Приглашение
 
         </h2>
 
-
         <p>
 
-
-            Пусть этот день станет ещё одним
-            тёплым воспоминанием,
-            наполненным счастьем,
-            улыбками и любовью близких людей.
-
+            Есть события,
+            которые хочется
+            разделить
+            только с самыми
+            близкими людьми.
 
         </p>
 
+        <p>
 
-        <div class="signature">
+            Я буду счастлива,
+            если именно вы
+            станете частью
+            этого дня.
 
+        </p>
 
-            С любовью,<br>
+        <div class="age">
 
-
-            Екатерина и её семья
-
+            45
 
         </div>
 
+        <div class="invite-date">
+
+            22 августа 2026
+
+        </div>
+
+        <div class="invite-time">
+
+            Начало в 16:00
+
+        </div>
 
     </div>
 
-
 </section>
+<!-- ========================================= -->
+<!-- ТАЙМЕР -->
+<!-- ========================================= -->
 
-
-<footer>
-
+<section class="countdown">
 
     <div class="container">
 
+        <span class="section-subtitle">
+            COUNTDOWN
+        </span>
 
-        <p>
+        <h2>
+            До праздника осталось
+        </h2>
 
+        <div class="timer">
 
-            Юбилей Екатерины • 45 лет
+            <div class="timer-item">
+                <span id="days">00</span>
+                <small>дней</small>
+            </div>
 
+            <div class="timer-item">
+                <span id="hours">00</span>
+                <small>часов</small>
+            </div>
 
-        </p>
+            <div class="timer-item">
+                <span id="minutes">00</span>
+                <small>минут</small>
+            </div>
 
+            <div class="timer-item">
+                <span id="seconds">00</span>
+                <small>секунд</small>
+            </div>
 
-        <p>
-
-
-            22 августа 2026 года • 16:00
-
-
-        </p>
-
+        </div>
 
     </div>
 
+</section>
+
+<!-- ========================================= -->
+<!-- ИСТОРИЯ -->
+<!-- ========================================= -->
+
+<section class="story">
+
+    <div class="container story-grid">
+
+        <div class="story-image">
+
+            <img
+                src="images/child.jpg"
+                alt="Детская фотография">
+
+        </div>
+
+        <div class="story-content">
+
+            <span class="section-subtitle">
+
+                MY STORY
+
+            </span>
+
+            <h2>
+
+                Немного истории...
+
+            </h2>
+
+            <p>
+
+                Когда-то маленькая девочка с огромным
+                любопытством открывала для себя мир,
+                собирала ромашки, радовалась лету
+                и мечтала о будущем.
+
+            </p>
+
+            <p>
+
+                Сегодня мне исполняется 45 лет,
+                и я с благодарностью оглядываюсь
+                на пройденный путь.
+
+            </p>
+
+            <p>
+
+                Самое большое счастье —
+                возможность разделить этот день
+                с людьми, которые мне дороги.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- МЕСТО ПРОВЕДЕНИЯ -->
+<!-- ========================================= -->
+
+<section class="location">
+
+    <div class="container">
+
+        <span class="section-subtitle">
+
+            LOCATION
+
+        </span>
+
+        <h2>
+
+            Место встречи
+
+        </h2>
+
+        <div class="location-card">
+
+            <div class="location-photo">
+
+                <img
+                    src="images/location.jpg"
+                    alt="Ресторан">
+
+            </div>
+
+            <div class="location-info">
+
+                <h3>
+
+                    Ресторан «Отдых»
+
+                </h3>
+
+                <p>
+
+                    Московская область,
+                    г. Подольск
+
+                </p>
+
+                <p>
+
+                    ул. Генерал-губернатора
+                    Закревского, 1
+
+                </p>
+
+                <a
+                    class="map-button"
+                    href="https://yandex.ru/maps/?text=Ресторан+Отдых+Подольск"
+                    target="_blank">
+
+                    Построить маршрут
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- АТМОСФЕРА ПРАЗДНИКА -->
+<!-- ========================================= -->
+
+<section class="atmosphere">
+
+    <div class="container">
+
+        <span class="section-subtitle">
+            ATMOSPHERE
+        </span>
+
+        <h2>
+            Атмосфера праздника
+        </h2>
+
+        <p class="section-description">
+
+            Нам будет очень приятно, если ваши образы поддержат
+            настроение этого летнего вечера.
+            Мы вдохновлялись природными оттенками,
+            ромашками, лимонами и уютом летнего сада.
+
+        </p>
+
+        <!-- Главное фото -->
+
+        <div class="hero-photo">
+
+            <img src="images/table.jpg"
+                 alt="Сервировка праздника">
+
+        </div>
+
+        <!-- Палитра -->
+
+        <h3 class="palette-title">
+            Палитра вечера
+        </h3>
+
+        <div class="palette">
+
+            <div class="palette-card">
+
+                <div class="palette-color milk"></div>
+
+                <span>Молочный</span>
+
+            </div>
+
+            <div class="palette-card">
+
+                <div class="palette-color beige"></div>
+
+                <span>Бежевый</span>
+
+            </div>
+
+            <div class="palette-card">
+
+                <div class="palette-color olive"></div>
+
+                <span>Оливковый</span>
+
+            </div>
+
+            <div class="palette-card">
+
+                <div class="palette-color dusty"></div>
+
+                <span>Пыльно-розовый</span>
+
+            </div>
+
+            <div class="palette-card">
+
+                <div class="palette-color chocolate"></div>
+
+                <span>Шоколадный</span>
+
+            </div>
+
+        </div>
+
+        <!-- Образы -->
+
+        <div class="looks-grid">
+
+            <div class="look">
+
+                <img src="images/women.jpg"
+                     alt="Женские образы">
+
+                <h4>Женские образы</h4>
+
+            </div>
+
+            <div class="look">
+
+                <img src="images/men.jpg"
+                     alt="Мужские образы">
+
+                <h4>Мужские образы</h4>
+
+            </div>
+
+        </div>
+
+        <div class="dress-note">
+
+            Если в вашем гардеробе нет одежды этих оттенков —
+            не переживайте.
+
+            <br><br>
+
+            Самое главное —
+            ваше присутствие
+            и прекрасное настроение ❤️
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- RSVP -->
+<!-- ========================================= -->
+
+<section class="rsvp">
+
+    <div class="container">
+
+        <span class="section-subtitle">
+
+            RSVP
+
+        </span>
+
+        <h2>
+
+            Подтвердите присутствие
+
+        </h2>
+
+        <p class="section-description">
+
+            Пожалуйста, сообщите о своём решении
+            до 17 августа 2026 года.
+
+        </p>
+
+        <form id="guestForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Ваше имя"
+                required>
+
+            <div class="radio-group">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Да"
+                        required>
+
+                    <span>
+                        💛 С удовольствием приду
+                    </span>
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Нет">
+
+                    <span>
+                        🤍 К сожалению, не смогу
+                    </span>
+
+                </label>
+
+            </div>
+
+            <textarea
+                id="comment"
+                placeholder="Комментарий (по желанию)"></textarea>
+
+            <button type="submit">
+
+                Отправить ответ
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+
+            С любовью ❤️
+
+        </p>
+
+        <p>
+
+            До скорой встречи!
+
+        </p>
+
+    </div>
 
 </footer>
+
+</main>
+
+<!-- Supabase -->
+ <div id="successModal" class="success-modal">
+
+    <div class="success-box">
+
+        <h2>Спасибо! ❤️</h2>
+
+        <p>
+
+            Ваш ответ успешно получен.
+
+            <br><br>
+
+            С нетерпением ждём встречи!
+
+        </p>
+
+        <button id="closeModal">
+
+            Закрыть
+
+        </button>
+
+    </div>
+
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Основной JS -->
 
 <script src="script.js"></script>
 
-
 </body>
+
 </html>
