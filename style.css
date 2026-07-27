@@ -1,0 +1,984 @@
+/* ===================================
+   ОБЩИЕ НАСТРОЙКИ
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#F8F4EB;
+
+    color:#5B4C40;
+
+    font-family:'Cormorant Garamond',serif;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+.container{
+
+    width:90%;
+
+    max-width:1150px;
+
+    margin:auto;
+
+}
+
+/* ===================================
+   ЗАГОЛОВКИ
+=================================== */
+
+.section-title{
+
+    text-align:center;
+
+    font-size:52px;
+
+    color:#A27B43;
+
+    margin-bottom:25px;
+
+    position:relative;
+
+}
+
+.section-title::after{
+
+    content:"";
+
+    width:90px;
+
+    height:2px;
+
+    background:#C8A46D;
+
+    display:block;
+
+    margin:18px auto;
+
+}
+
+p{
+
+    font-size:24px;
+
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background:
+    linear-gradient(rgba(248,244,235,.78),
+    rgba(248,244,235,.78)),
+
+    url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    backdrop-filter:blur(2px);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+.welcome{
+
+    font-size:36px;
+
+    color:#7A6044;
+
+    margin-bottom:50px;
+
+    font-family:'Great Vibes',cursive;
+
+}
+
+/* ===================================
+   КОНВЕРТ
+=================================== */
+
+.envelope{
+
+    width:340px;
+
+    height:220px;
+
+    background:white;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.envelope:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.03);
+
+}
+
+.envelope-front{
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+.heart{
+
+    display:block;
+
+    font-size:48px;
+
+    color:#C5A062;
+
+    margin-bottom:18px;
+
+}
+
+.envelope h3{
+
+    font-size:34px;
+
+    margin-bottom:12px;
+
+}
+
+.envelope p{
+
+    font-size:21px;
+
+}
+
+/* ===================================
+   ПРИГЛАШЕНИЕ
+=================================== */
+
+.invitation{
+
+    padding:120px 0;
+
+    text-align:center;
+
+}
+
+.script{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:60px;
+
+    color:#B58B53;
+
+}
+
+.invitation h1{
+
+    font-size:82px;
+
+    margin-top:20px;
+
+}
+
+.invitation span{
+
+    display:block;
+
+    color:#A07B45;
+
+}
+
+.age{
+
+    font-size:130px;
+
+    color:#B48D56;
+
+    margin-top:25px;
+
+}
+
+.years{
+
+    font-size:34px;
+
+}
+
+.date{
+
+    margin-top:25px;
+
+}
+
+.time{
+
+    font-size:30px;
+
+    margin-top:10px;
+
+}
+
+/* ===================================
+   ТАЙМЕР
+=================================== */
+
+.countdown{
+
+    padding:120px 0;
+
+    background:#FCFAF6;
+
+}
+
+.timer{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.timer-box{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.timer-box span{
+
+    display:block;
+
+    font-size:58px;
+
+    color:#B28B52;
+
+    font-weight:bold;
+
+}
+
+.timer-box small{
+
+    font-size:24px;
+
+}
+
+/* ===================================
+   СКРЫТЫЙ БЛОК
+=================================== */
+
+.hidden{
+
+    display:none;
+
+}
+/* ===================================
+   ИСТОРИЯ
+=================================== */
+
+.story{
+
+    padding:120px 0;
+
+}
+
+.story-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.story-image{
+
+    text-align:center;
+
+}
+
+.story-image img{
+
+    width:100%;
+
+    max-width:430px;
+
+    border-radius:30px;
+
+    border:12px solid white;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.story-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.story-text h2{
+
+    font-size:56px;
+
+    color:#A27B43;
+
+    margin-bottom:25px;
+
+}
+
+.story-text p{
+
+    margin-bottom:20px;
+
+}
+
+/* ===================================
+   МЕСТО ПРОВЕДЕНИЯ
+=================================== */
+
+.location{
+
+    padding:120px 0;
+
+    background:#FCFAF6;
+
+}
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.info-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.icon{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.info-card h3{
+
+    font-size:34px;
+
+    color:#A27B43;
+
+    margin-bottom:18px;
+
+}
+
+/* ===================================
+   КНОПКА КАРТЫ
+=================================== */
+
+.map-button{
+
+    text-align:center;
+
+    margin-top:55px;
+
+}
+
+.map-button a{
+
+    display:inline-block;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    background:#B6945D;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:24px;
+
+    transition:.3s;
+
+}
+
+.map-button a:hover{
+
+    background:#967546;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================
+   ДРЕСС-КОД
+=================================== */
+
+.dresscode{
+
+    padding:120px 0;
+
+}
+
+.dress-text{
+
+    text-align:center;
+
+    max-width:800px;
+
+    margin:30px auto 60px;
+
+}
+
+.colors{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:35px;
+
+}
+
+.color{
+
+    text-align:center;
+
+}
+
+.circle{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    margin:0 auto 15px;
+
+    border:5px solid white;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.beige{
+
+    background:#d8b67d;
+
+}
+.beige{
+
+    background:#e493b8;
+
+}
+
+.pearl{
+
+    background:#F4F1EB;
+
+}
+
+.gold{
+
+    background:#e9a620;
+
+}
+
+.olive{
+
+    background:#68703a;
+
+}
+
+.brown{
+
+    background:#5a3b1e;
+
+}
+
+/* ===================================
+   ПОДАРОК
+=================================== */
+
+.gift{
+
+    padding:120px 0;
+
+    background:#FCFAF6;
+
+}
+
+.gift-card{
+
+    max-width:850px;
+
+    margin:auto;
+
+    background:rgb(201, 223, 104);
+
+    border-radius:30px;
+
+    padding:70px;
+
+    text-align:center;
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.gift-card h2{
+
+    font-size:52px;
+
+    color:#A27B43;
+
+    margin-bottom:20px;
+
+}
+
+.gift-icon{
+
+    font-size:60px;
+
+    margin:25px 0;
+
+}
+
+.gift-card p{
+
+    margin-bottom:20px;
+
+}
+/* ===================================
+   RSVP
+=================================== */
+
+.rsvp{
+
+    padding:120px 0;
+
+}
+
+.rsvp-text{
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:30px auto 60px;
+
+}
+
+#rsvpForm{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+#rsvpForm input,
+#rsvpForm textarea{
+
+    width:100%;
+
+    padding:18px 20px;
+
+    margin-bottom:22px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:22px;
+
+}
+
+#rsvpForm textarea{
+
+    resize:vertical;
+
+    min-height:140px;
+
+}
+
+.radio-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+    font-size:24px;
+
+}
+
+.radio-group label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+}
+
+#rsvpForm button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#B6945D;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#rsvpForm button:hover{
+
+    background:#9A7948;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================
+   БЛАГОДАРНОСТЬ
+=================================== */
+
+.thanks{
+
+    padding:120px 0;
+
+    background:#FCFAF6;
+
+    text-align:center;
+
+}
+
+.thanks h2{
+
+    font-size:60px;
+
+    color:#A27B43;
+
+    margin-bottom:25px;
+
+}
+
+.signature{
+
+    margin-top:40px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:42px;
+
+    color:#B28B52;
+
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+
+    background:#EFE5D4;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+}
+
+footer p{
+
+    margin:8px 0;
+
+    font-size:22px;
+
+}
+
+/* ===================================
+   АНИМАЦИЯ
+=================================== */
+
+.fade-section{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:all .8s ease;
+
+}
+
+.fade-section.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ===================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+=================================== */
+
+@media(max-width:900px){
+
+.hero{
+
+    padding:100px 20px;
+
+    min-height:auto;
+
+}
+
+.story-grid{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.info-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.timer{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.invitation h1{
+
+    font-size:58px;
+
+}
+
+.age{
+
+    font-size:90px;
+
+}
+
+.section-title{
+
+    font-size:40px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+p{
+
+    font-size:20px;
+
+}
+
+.welcome{
+
+    font-size:28px;
+
+}
+
+.script{
+
+    font-size:42px;
+
+}
+
+.invitation h1{
+
+    font-size:46px;
+
+}
+
+.age{
+
+    font-size:70px;
+
+}
+
+.timer{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+.timer-box{
+
+    padding:25px;
+
+}
+
+.timer-box span{
+
+    font-size:42px;
+
+}
+
+.gift-card{
+
+    padding:40px 25px;
+
+}
+
+.envelope{
+
+    width:280px;
+
+    height:180px;
+
+}
+
+.section-title{
+
+    font-size:34px;
+
+}
+
+}
