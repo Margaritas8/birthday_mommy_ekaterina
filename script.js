@@ -1,3 +1,16 @@
+// ===========================
+// SUPABASE
+// ===========================
+
+const SUPABASE_URL = "https://ftjmteemqzzzblxcxamp.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_o-OKGT3xpOO6VjJg2bLAZQ_PAZzqpho";
+
+const supabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
 // ===============================
 // ОТКРЫТИЕ ПРИГЛАШЕНИЯ
 // ===============================
@@ -107,24 +120,55 @@ sections.forEach(section => {
 // ФОРМА RSVP
 // ===============================
 
-const form = document.getElementById("rsvpForm");
+form.addEventListener("submit", async function(e){
 
-if (form) {
+    e.preventDefault();
 
-    form.addEventListener("submit", function(event){
+    const name = document.getElementById("guestName").value;
 
-        event.preventDefault();
+    const answer =
+        document.querySelector('input[name="answer"]:checked')?.value;
 
-        const name = document.getElementById("guestName").value;
+    const comment =
+        document.getElementById("comment").value;
+
+    const button = form.querySelector("button");
+
+    button.disabled = true;
+    button.textContent = "Отправляем...";
+
+    const { error } = await supabase
+        .from("guests")
+        .insert([
+            {
+                name,
+                answer,
+                comment
+            }
+        ]);
+
+    if(error){
+
+        alert("Ошибка 😢\n\n" + error.message);
+
+        console.log(error);
+
+    }else{
 
         alert(
-            "Спасибо, " + name + "! ❤️\n\nМы получили ваш ответ."
+`Спасибо, ${name}! ❤️
+
+Ваш ответ сохранён.`
         );
 
         form.reset();
 
-    });
+    }
 
+    button.disabled = false;
+    button.textContent = "Отправить";
+
+});
 }
 
 // ===============================
