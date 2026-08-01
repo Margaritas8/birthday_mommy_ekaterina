@@ -220,7 +220,7 @@ document
 const SUPABASE_URL = "https://ftjmteemqzzzblxcxamp.supabase.co";
 
 const SUPABASE_ANON_KEY =
-"ВСТАВЬ_СЮДА_СВОЙ_PUBLISHABLE_KEY";
+"sb_publishable_o-OKGT3xpOO6VjJg2bLAZQ_PAZzqpho";
 
 const supabaseClient = supabase.createClient(
 
@@ -271,13 +271,13 @@ form.addEventListener("submit", async (e)=>{
 
     .insert([{
 
-        name:name,
+    name: name,
 
-        attendance:attendance,
+    answer: attendance,
 
-        comment:comment
+    comment: comment
 
-    }]);
+}]);
 
     if(error){
 
