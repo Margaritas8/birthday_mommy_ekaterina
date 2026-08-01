@@ -4,16 +4,13 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Юбилей Екатерины</title>
 
-    <!-- Google Fonts -->
+    <!-- Шрифты -->
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -22,115 +19,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap"
           rel="stylesheet">
 
-    <link rel="stylesheet"
-          href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- ====================================== -->
-<!-- ПЕРВЫЙ ЭКРАН -->
-<!-- ====================================== -->
+<!-- ================================================= -->
+<!-- ОБЛОЖКА -->
+<!-- ================================================= -->
 
-<header class="hero">
+<section class="cover">
 
-    <!-- Размытый фон -->
+    <div class="cover-bg"></div>
 
-    <div class="hero-bg"></div>
+    <div class="cover-overlay"></div>
 
-    <div class="hero-overlay"></div>
+    <div class="cover-content">
 
-    <div class="hero-content">
+        <p class="cover-subtitle">
 
-        <p class="hero-subtitle">
             ПРИГЛАШЕНИЕ НА ЮБИЛЕЙ
+
         </p>
 
         <h1>
+
             Екатерина
+
         </h1>
 
-        <div class="hero-age">
+        <div class="age-circle">
 
-            <span>45</span>
+            45
 
         </div>
 
-        <p class="hero-date">
+        <p class="cover-date">
 
             22 августа 2026 • 16:00
 
         </p>
 
-        <p class="hero-text">
-
-            Буду счастлива разделить
-            этот особенный день вместе с вами.
-
-        </p>
-
+        <!-- ========================= -->
         <!-- КОНВЕРТ -->
+        <!-- ========================= -->
 
-        <div class="envelope-wrapper">
+        <div class="envelope-area">
 
-            <div class="envelope"
-                 id="envelope">
+            <div class="envelope">
 
-                <!-- письмо -->
+                <!-- свечение -->
 
-                <div class="letter">
-
-                    <div class="letter-paper">
-
-                        <p>
-
-                            Нажмите,
-                            чтобы открыть
-                            приглашение
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <!-- задняя часть -->
-
-                <div class="envelope-back"></div>
-
-                <!-- передняя часть -->
-
-                <div class="envelope-front"></div>
+                <div class="envelope-light"></div>
 
                 <!-- клапан -->
 
                 <div class="envelope-flap"></div>
 
+                <!-- корпус -->
+
+                <div class="envelope-body"></div>
+
                 <!-- печать -->
 
-                <div class="seal">
+                <button
+                    class="seal-button"
+                    id="openInvitation"
+                    aria-label="Открыть приглашение">
 
                     ✿
 
-                </div>
+                </button>
 
             </div>
+
+            <p class="open-text">
+
+                ✿ Нажмите на печать,
+                чтобы открыть приглашение
+
+            </p>
 
         </div>
 
     </div>
 
-</header>
+</section>
 
-<main>
-
-<!-- ====================================== -->
+<!-- ================================================= -->
 <!-- ПРИГЛАШЕНИЕ -->
-<!-- ====================================== -->
+<!-- ================================================= -->
 
 <section
-class="invitation hidden"
+class="invitation"
 id="invitation">
 
     <div class="container">
@@ -149,43 +131,43 @@ id="invitation">
 
         <p>
 
-            Совсем скоро в моей жизни
-            наступит особенный день —
-            мне исполнится <strong>45 лет</strong>.
+            Совсем скоро наступит особенный день —
+            мой юбилей.
 
         </p>
 
         <p>
 
-            От всей души приглашаю вас
-            разделить со мной этот праздник,
-            наполненный теплом,
-            улыбками и счастливыми моментами.
+            Я буду очень счастлива провести его
+            рядом с самыми дорогими людьми.
 
         </p>
 
         <p>
 
-            Ваше присутствие —
-            самый дорогой подарок,
-            который сделает этот день
-            по-настоящему незабываемым.
+            Приглашаю вас разделить
+            этот теплый семейный праздник,
+            наполненный улыбками,
+            душевными разговорами
+            и счастливыми воспоминаниями.
 
         </p>
 
     </div>
 
 </section>
-<!-- ====================================== -->
-<!-- ДЕТСКИЕ ФОТО -->
-<!-- ====================================== -->
+<!-- ================================================= -->
+<!-- ДЕТСКИЙ АЛЬБОМ -->
+<!-- ================================================= -->
 
 <section class="memories">
 
     <div class="container">
 
         <span class="section-subtitle">
+
             MEMORY
+
         </span>
 
         <h2>
@@ -196,25 +178,27 @@ id="invitation">
 
         <p class="section-text">
 
-            Когда-то маленькая девочка мечтала,
-            смеялась и радовалась каждому летнему дню.
-            Сегодня за плечами уже 45 счастливых лет,
-            наполненных любовью, заботой и дорогими людьми.
-            И самым большим счастьем будет разделить
-            этот особенный день именно с вами.
+            Кажется, совсем недавно была маленькая девочка,
+            которая искренне радовалась каждому дню.
+            Сегодня за плечами уже 45 прекрасных лет,
+            наполненных любовью, семьёй и счастливыми моментами.
+
+            <br><br>
+
+            И именно вы стали важной частью этой истории.
 
         </p>
 
-        <div class="gallery">
+        <div class="memory-gallery">
 
-            <div class="gallery-big">
+            <div class="memory-main">
 
                 <img src="images/child1.jpg"
-                     alt="Детское фото">
+                     alt="Детская фотография">
 
             </div>
 
-            <div class="gallery-small">
+            <div class="memory-grid">
 
                 <img src="images/child2.jpg"
                      alt="Фото">
@@ -236,69 +220,9 @@ id="invitation">
 
 </section>
 
-<!-- ====================================== -->
-<!-- ТАЙМЕР -->
-<!-- ====================================== -->
-
-<section class="countdown">
-
-    <div class="container">
-
-        <span class="section-subtitle">
-
-            COUNTDOWN
-
-        </span>
-
-        <h2>
-
-            До нашей встречи осталось
-
-        </h2>
-
-        <div class="timer">
-
-            <div class="timer-item">
-
-                <span id="days">00</span>
-
-                <p>Дней</p>
-
-            </div>
-
-            <div class="timer-item">
-
-                <span id="hours">00</span>
-
-                <p>Часов</p>
-
-            </div>
-
-            <div class="timer-item">
-
-                <span id="minutes">00</span>
-
-                <p>Минут</p>
-
-            </div>
-
-            <div class="timer-item">
-
-                <span id="seconds">00</span>
-
-                <p>Секунд</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ====================================== -->
+<!-- ================================================= -->
 <!-- МЕСТО ПРОВЕДЕНИЯ -->
-<!-- ====================================== -->
+<!-- ================================================= -->
 
 <section class="location">
 
@@ -318,41 +242,52 @@ id="invitation">
 
         <div class="location-card">
 
-            <div class="location-photo">
+            <div class="location-image">
 
-                <img src="images/location.jpg"
-                     alt="Ресторан">
+                <img
+                    src="images/location.jpg"
+                    alt="Ресторан">
 
             </div>
 
-            <div class="location-info">
+            <div class="location-content">
 
                 <h3>
 
-                    Ресторан «Название»
+                    Ресторан «Отдых»
 
                 </h3>
 
                 <p>
 
-                    📍 Адрес ресторана
+                    📍 Московская область,
+                    г. Подольск
 
                 </p>
 
                 <p>
 
-                    🗓 22 августа 2026
+                    🗓️ 22 августа 2026
 
                 </p>
 
                 <p>
 
-                    🕓 Начало в 16:00
+                    🕓 Сбор гостей — 16:00
 
                 </p>
 
-                <a href="#"
+                <p>
+
+                    Праздник пройдет
+                    в уютной атмосфере
+                    летнего вечера.
+
+                </p>
+
+                <a
                    class="map-button"
+                   href="https://yandex.ru/maps/"
                    target="_blank">
 
                     Открыть карту
@@ -366,55 +301,61 @@ id="invitation">
     </div>
 
 </section>
-<!-- ====================================== -->
+<!-- ================================================= -->
 <!-- АТМОСФЕРА ПРАЗДНИКА -->
-<!-- ====================================== -->
+<!-- ================================================= -->
 
 <section class="atmosphere">
 
     <div class="container">
 
         <span class="section-subtitle">
+
             ATMOSPHERE
+
         </span>
 
         <h2>
+
             Атмосфера праздника
+
         </h2>
 
         <p class="section-text">
 
-            Нам будет очень приятно, если ваши образы поддержат
-            атмосферу нашего летнего праздника.
-            Мы вдохновлялись ромашками, солнечным светом,
-            натуральными тканями и уютом летнего сада.
+            Нам будет очень приятно, если ваши образы
+            поддержат атмосферу этого летнего вечера.
+            Мы вдохновлялись природой, ромашками,
+            теплыми оттенками и уютом семейного праздника.
 
         </p>
 
-       <div class="mood-board">
+        <div class="mood-board">
 
-    <div class="mood-main">
+            <div class="mood-large">
 
-        <img src="images/table.jpg"
-             alt="Сервировка">
+                <img src="images/table.jpg"
+                     alt="Праздничная сервировка">
 
-    </div>
+            </div>
 
-    <div class="mood-grid">
+            <div class="mood-small">
 
-        <img src="images/vibe1.jpg"
-             alt="Ромашки">
+                <img src="images/vibe1.jpg"
+                     alt="Ромашки">
 
-        <img src="images/vibe2.png"
-             alt="Декор">
+                <img src="images/vibe2.jpg"
+                     alt="Декор">
 
-        <img src="images/vibe3.png"
-             alt="Свечи">
+                <img src="images/vibe3.jpg"
+                     alt="Свечи">
 
-        <img src="images/vibe4.jpg"
-             alt="Атмосфера">
+                <img src="images/vibe4.jpg"
+                     alt="Атмосфера">
 
-    </div>
+            </div>
+
+        </div>
 
         <h3 class="palette-title">
 
@@ -424,34 +365,52 @@ id="invitation">
 
         <div class="palette">
 
-            <div class="color-card">
-                <div class="color milk"></div>
+            <div class="palette-item">
+
+                <div class="palette-color milk"></div>
+
                 <span>Молочный</span>
+
             </div>
 
-            <div class="color-card">
-                <div class="color chocolate"></div>
+            <div class="palette-item">
+
+                <div class="palette-color chocolate"></div>
+
                 <span>Шоколадный</span>
+
             </div>
 
-            <div class="color-card">
-                <div class="color olive"></div>
+            <div class="palette-item">
+
+                <div class="palette-color olive"></div>
+
                 <span>Оливковый</span>
+
             </div>
 
-            <div class="color-card">
-                <div class="color dusty"></div>
+            <div class="palette-item">
+
+                <div class="palette-color dusty"></div>
+
                 <span>Пыльно-розовый</span>
+
             </div>
 
-            <div class="color-card">
-                <div class="color blue"></div>
+            <div class="palette-item">
+
+                <div class="palette-color blue"></div>
+
                 <span>Нежно-голубой</span>
+
             </div>
 
-            <div class="color-card">
-                <div class="color butter"></div>
-                <span>Сливочный</span>
+            <div class="palette-item">
+
+                <div class="palette-color yellow"></div>
+
+                <span>Сливочно-жёлтый</span>
+
             </div>
 
         </div>
@@ -464,8 +423,8 @@ id="invitation">
             <br><br>
 
             Самое главное —
-            ваше присутствие
-            и прекрасное настроение. 🤍
+            ваше присутствие,
+            улыбки и хорошее настроение. 🤍
 
         </p>
 
@@ -473,16 +432,18 @@ id="invitation">
 
 </section>
 
-<!-- ====================================== -->
+<!-- ================================================= -->
 <!-- ПОДАРОК -->
-<!-- ====================================== -->
+<!-- ================================================= -->
 
 <section class="gift">
 
     <div class="container">
 
         <span class="section-subtitle">
+
             GIFT
+
         </span>
 
         <h2>
@@ -501,24 +462,23 @@ id="invitation">
 
             <p>
 
-                Ваше присутствие —
-                уже самый ценный подарок для меня.
+                Самый ценный подарок для меня —
+                ваше присутствие в этот день.
 
             </p>
 
             <p>
 
-                Если вы захотите поздравить меня
-                ещё и подарком,
-                я буду очень рада получить
-                конверт с вашими тёплыми пожеланиями.
+                Если вы захотите поздравить меня ещё и подарком,
+                я буду очень рада получить конверт
+                с вашими тёплыми пожеланиями.
 
             </p>
 
             <p>
 
-                Так вы поможете исполнить
-                одну маленькую мечту. 🤍
+                Это поможет исполнить одну маленькую мечту,
+                о которой я давно думаю. 🤍
 
             </p>
 
@@ -527,10 +487,69 @@ id="invitation">
     </div>
 
 </section>
+<!-- ================================================= -->
+<!-- ТАЙМЕР -->
+<!-- ================================================= -->
 
-<!-- ====================================== -->
+<section class="countdown">
+
+    <div class="container">
+
+        <span class="section-subtitle">
+
+            COUNTDOWN
+
+        </span>
+
+        <h2>
+
+            До нашей встречи осталось
+
+        </h2>
+
+        <div class="countdown-box">
+
+            <div class="time-card">
+
+                <span id="days">00</span>
+
+                <small>дней</small>
+
+            </div>
+
+            <div class="time-card">
+
+                <span id="hours">00</span>
+
+                <small>часов</small>
+
+            </div>
+
+            <div class="time-card">
+
+                <span id="minutes">00</span>
+
+                <small>минут</small>
+
+            </div>
+
+            <div class="time-card">
+
+                <span id="seconds">00</span>
+
+                <small>секунд</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================================= -->
 <!-- RSVP -->
-<!-- ====================================== -->
+<!-- ================================================= -->
 
 <section class="rsvp">
 
@@ -550,8 +569,9 @@ id="invitation">
 
         <p class="section-text">
 
-            Пожалуйста, сообщите о своём решении
-            до <strong>1 августа 2026 года</strong>.
+            Пожалуйста, сообщите до
+            <strong>1 августа 2026 года</strong>,
+            сможете ли вы разделить этот день вместе со мной.
 
         </p>
 
@@ -565,7 +585,7 @@ id="invitation">
 
             <div class="radio-group">
 
-                <label>
+                <label class="radio-card">
 
                     <input
                         type="radio"
@@ -581,7 +601,7 @@ id="invitation">
 
                 </label>
 
-                <label>
+                <label class="radio-card">
 
                     <input
                         type="radio"
@@ -599,8 +619,10 @@ id="invitation">
             </div>
 
             <textarea
+
                 id="comment"
-                placeholder="Комментарий (по желанию)"></textarea>
+
+                placeholder="Если хотите, можете оставить комментарий"></textarea>
 
             <button type="submit">
 
@@ -614,25 +636,25 @@ id="invitation">
 
 </section>
 
-<!-- ====================================== -->
-<!-- МОДАЛЬНОЕ ОКНО -->
-<!-- ====================================== -->
+<!-- ================================================= -->
+<!-- ОКНО СПАСИБО -->
+<!-- ================================================= -->
 
 <div
 class="success-modal"
 id="successModal">
 
-    <div class="success-box">
+    <div class="success-window">
 
         <h2>
 
-            Спасибо! ❤️
+            Спасибо! 🤍
 
         </h2>
 
         <p>
 
-            Ваш ответ успешно получен.
+            Ваш ответ успешно отправлен.
 
             <br><br>
 
@@ -640,7 +662,8 @@ id="successModal">
 
         </p>
 
-        <button id="closeModal">
+        <button
+        id="closeModal">
 
             Закрыть
 
@@ -650,37 +673,37 @@ id="successModal">
 
 </div>
 
-<!-- ====================================== -->
+<!-- ================================================= -->
 <!-- FOOTER -->
-<!-- ====================================== -->
+<!-- ================================================= -->
 
 <footer>
 
     <div class="container">
 
-        <p>
+        <p class="footer-top">
 
-            С любовью ❤️
+            С любовью
 
         </p>
 
-        <h3>
+        <h2>
 
             Екатерина
 
-        </h3>
+        </h2>
 
-        <p>
+        <p class="footer-bottom">
 
-            До скорой встречи!
+            До скорой встречи
+            <br>
+            22 августа 2026
 
         </p>
 
     </div>
 
 </footer>
-
-</main>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
