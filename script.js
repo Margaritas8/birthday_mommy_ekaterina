@@ -1,10 +1,11 @@
 /* ==========================================
-   НАСТРОЙКИ SUPABASE
+   SUPABASE
 ========================================== */
 
 const SUPABASE_URL = "https://ftjmteemqzzzblxcxamp.supabase.co";
 
-const SUPABASE_KEY = "sb_publishable_o-OKGT3xpOO6VjJg2bLAZQ_PAZzqpho";
+const SUPABASE_KEY =
+"sb_publishable_o-OKGT3xpOO6VjJg2bLAZQ_PAZzqpho";
 
 const supabaseClient =
 supabase.createClient(
@@ -22,22 +23,29 @@ document.getElementById("envelope");
 const invitation =
 document.getElementById("invitation");
 
-envelope.addEventListener("click", () => {
+if (envelope) {
 
-    envelope.classList.add("open");
+    envelope.addEventListener("click", () => {
 
-    setTimeout(() => {
+        envelope.classList.add("open");
 
-        invitation.classList.remove("hidden");
-        invitation.classList.add("show");
+        setTimeout(() => {
 
-        invitation.scrollIntoView({
-            behavior: "smooth"
-        });
+            invitation.classList.remove("hidden");
 
-    }, 900);
+            invitation.classList.add("show");
 
-});
+            invitation.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }, 900);
+
+    });
+
+}
 
 /* ==========================================
    ТАЙМЕР
@@ -52,16 +60,7 @@ function updateTimer() {
 
     const distance = targetDate - now;
 
-    if (distance <= 0) {
-
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
-
-        return;
-
-    }
+    if (distance < 0) return;
 
     const days =
     Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -69,19 +68,22 @@ function updateTimer() {
     const hours =
     Math.floor(
         (distance % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
+        /
+        (1000 * 60 * 60)
     );
 
     const minutes =
     Math.floor(
         (distance % (1000 * 60 * 60))
-        / (1000 * 60)
+        /
+        (1000 * 60)
     );
 
     const seconds =
     Math.floor(
         (distance % (1000 * 60))
-        / 1000
+        /
+        1000
     );
 
     document.getElementById("days").textContent =
@@ -101,15 +103,100 @@ function updateTimer() {
 updateTimer();
 
 setInterval(updateTimer, 1000);
+
 /* ==========================================
-   МОДАЛЬНОЕ ОКНО
+   ПЛАВНОЕ ПОЯВЛЕНИЕ БЛОКОВ
 ========================================== */
 
-const successModal =
-document.getElementById("successModal");
+const sections =
+document.querySelectorAll("section");
 
-const closeModal =
-document.getElementById("closeModal");
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+
+threshold:0.15
+
+}
+
+);
+
+sections.forEach(section=>{
+
+observer.observe(section);
+
+});
+/* ==========================================
+   ОТПРАВКА RSVP В SUPABASE
+========================================== */
+
+const guestForm = document.getElementById("guestForm");
+const successModal = document.getElementById("successModal");
+const closeModal = document.getElementById("closeModal");
+
+if (guestForm) {
+
+    guestForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value;
+
+        const attendance =
+            document.querySelector(
+                'input[name="attendance"]:checked'
+            )?.value;
+
+        const comment =
+            document.getElementById("comment").value;
+
+        const { error } =
+        await supabaseClient
+        .from("guests")
+        .insert([{
+
+            name: name,
+            attendance: attendance,
+            comment: comment
+
+        }]);
+
+        if (error) {
+
+            alert("Произошла ошибка. Попробуйте ещё раз.");
+            console.error(error);
+
+            return;
+
+        }
+
+        successModal.classList.add("active");
+
+        guestForm.reset();
+
+    });
+
+}
+
+/* ==========================================
+   ЗАКРЫТИЕ ОКНА
+========================================== */
 
 if (closeModal) {
 
@@ -132,72 +219,133 @@ window.addEventListener("click", (event) => {
 });
 
 /* ==========================================
-   ПЛАВНОЕ ПОЯВЛЕНИЕ БЛОКОВ
+   УВЕЛИЧЕНИЕ ФОТОГРАФИЙ
 ========================================== */
 
-const hiddenBlocks =
-document.querySelectorAll("section");
+const images = document.querySelectorAll(
+    ".gallery img, .mood-board img"
+);
 
-const observer =
-new IntersectionObserver((entries) => {
+images.forEach(image => {
 
-    entries.forEach(entry => {
+    image.addEventListener("click", () => {
 
-        if (entry.isIntersecting) {
+        const overlay =
+        document.createElement("div");
 
-            entry.target.classList.add("show");
+        overlay.className = "image-overlay";
 
-        }
+        const bigImage =
+        document.createElement("img");
+
+        bigImage.src = image.src;
+
+        overlay.appendChild(bigImage);
+
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener("click", () => {
+
+            overlay.remove();
+
+        });
 
     });
-
-}, {
-
-    threshold:0.15
-
-});
-
-hiddenBlocks.forEach(section => {
-
-    observer.observe(section);
 
 });
 
 /* ==========================================
-   КНОПКА ВВЕРХ
+   КНОПКА НАВЕРХ
 ========================================== */
 
-             const topButton =
-             document.createElement("button");
+const topButton =
+document.createElement("button");
 
-             topButton.innerHTML = "↑";
+topButton.innerHTML = "↑";
 
-             topButton.className = "top-button";
+topButton.className = "top-button";
 
-             document.body.appendChild(topButton);
+document.body.appendChild(topButton);
 
-              window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
 
-             if (window.scrollY > 600) {
+    if (window.scrollY > 500) {
 
-              topButton.classList.add("visible");
+        topButton.classList.add("visible");
 
-             } else {
+    } else {
 
-              topButton.classList.remove("visible");
+        topButton.classList.remove("visible");
 
-              }
+    }
 
-               });
+});
 
-              topButton.addEventListener("click", () => {
+topButton.addEventListener("click", () => {
 
-             window.scrollTo({
+    window.scrollTo({
 
-                top:0,
- 
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+/* ==========================================
+   ПЛАВНОЕ УВЕЛИЧЕНИЕ ФОТО
+========================================== */
+
+const moodImages =
+document.querySelectorAll(
+".gallery img, .mood-board img"
+);
+
+moodImages.forEach(img => {
+
+    img.addEventListener("mouseenter", () => {
+
+        img.style.transform =
+        "scale(1.05)";
+
+    });
+
+    img.addEventListener("mouseleave", () => {
+
+        img.style.transform =
+        "scale(1)";
+
+    });
+
+});
+
+/* ==========================================
+   ПЛАВНАЯ ПРОКРУТКА ПО САЙТУ
+========================================== */
+
+document.querySelectorAll('a[href^="#"]')
+.forEach(anchor => {
+
+    anchor.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const target =
+        document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if(target){
+
+            target.scrollIntoView({
+
                 behavior:"smooth"
 
-             });
+            });
+
+        }
+
+    });
 
 });
